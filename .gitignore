@@ -1,1 +1,10 @@
 /bin/
+
+
+# Ignore Eclipse-specific project files
+.classpath
+.project
+.settings/
+
+# ignroe maven build outputs
+target/
