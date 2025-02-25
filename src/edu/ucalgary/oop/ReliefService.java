@@ -36,7 +36,11 @@ public class ReliefService {
     }
     
     public void setDateOfInquiry(String dateOfInquiry) {
+        if(isValidDateFormat(dateOfInquiry)){
         this.dateOfInquiry = dateOfInquiry;
+          }else{
+            throw new IllegalArgumentException("invalid date format");   
+          }
     }
 
     public String getInfoProvided(){
@@ -55,7 +59,12 @@ public class ReliefService {
         this.lastKnownLocation = lastKnownLocation;
     }
 
-    boolean isValidDateFormat(String date)
+    private boolean isValidDateFormat(String date){
+          String regex = "^\\d{4}-\\d{2}-\\d{2}$";
+          Pattern myPattern = Pattern.compile(regex);
+          Matcher myMatcher = myPattern.matcher(date);
+          return myMatcher.matches();
+     }
 
     String getLogDetails()   
 }
