@@ -3,6 +3,7 @@ package edu.ucalgary.oop;
 public class Supply {
     private String type;
     private int quantity;
+    
     public Supply(String type, int quantity) {
         this.type = type;
         this.quantity = quantity;
