@@ -8,9 +8,9 @@ public class MedicalRecord{
      private String treatmentDetails;
      private String dateOfTreatment;
      public MedicalRecord(Location location, String treatmentDetails, String dateOfTreatment){
-          setLocation(location);
-          setTreatmentDetails(treatmentDetails);
-          setDateOfTreatment(dateOfTreatment);
+          this.setLocation(location);
+          this.setTreatmentDetails(treatmentDetails);
+          this.setDateOfTreatment(dateOfTreatment);
      }
      public Location getLocation(){
           return location;
