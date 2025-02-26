@@ -8,6 +8,7 @@
 
 # Ignore IntelliJ IDEA project files
 .idea
+ENSF380_GP-3.iml
 
 # Ignore maven build outputs
 target/
