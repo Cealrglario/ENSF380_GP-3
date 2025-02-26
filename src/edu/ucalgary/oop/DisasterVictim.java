@@ -16,22 +16,36 @@ public class DisasterVictim {
     private String comments;
     private static int counter = 0;
 
-    public DisasterVictim(String firstName, String ENTRY_DATE) {
-        this.firstName = firstName;
-        this.ENTRY_DATE = ENTRY_DATE;
-        this.ASSIGNED_SOCIAL_ID = generateSocialID();
+    public DisasterVictim(String firstName, String ENTRY_DATE) throws IllegalArgumentException {
+        boolean isValidEntryDate = isValidDateFormat(ENTRY_DATE);
+
+        if (!isValidEntryDate) {
+            throw new IllegalArgumentException("Invalid entry date format.");
+        } else {
+            this.firstName = firstName;
+            this.ENTRY_DATE = ENTRY_DATE;
+            this.ASSIGNED_SOCIAL_ID = generateSocialID();
+        }
     }
 
     public DisasterVictim(String firstName, String ENTRY_DATE, String dateOfBirth) throws IllegalArgumentException {
         boolean isValidDate = isValidDateFormat(dateOfBirth);
+        boolean isValidEntryDate = isValidDateFormat(ENTRY_DATE);
 
-        if (!isValidDate) {
+        if (!isValidDate || !isValidEntryDate) {
             throw new IllegalArgumentException("Invalid date format.");
         } else {
-            this.firstName = firstName;
-            this.ENTRY_DATE = ENTRY_DATE;
-            this.dateOfBirth = dateOfBirth;
-            this.ASSIGNED_SOCIAL_ID = generateSocialID();
+            int intEntryDate = convertDateStringToInt(ENTRY_DATE);
+            int intBirthDate = convertDateStringToInt(dateOfBirth);
+
+            if (intEntryDate < intBirthDate) {
+                throw new IllegalArgumentException("Entry date is earlier than birth date.");
+            } else {
+                this.firstName = firstName;
+                this.ENTRY_DATE = ENTRY_DATE;
+                this.dateOfBirth = dateOfBirth;
+                this.ASSIGNED_SOCIAL_ID = generateSocialID();
+            }
         }
     }
 
