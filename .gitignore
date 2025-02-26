@@ -6,5 +6,8 @@
 .project
 .settings/
 
-# ignroe maven build outputs
+# Ignore IntelliJ IDEA project files
+.idea
+
+# Ignore maven build outputs
 target/
