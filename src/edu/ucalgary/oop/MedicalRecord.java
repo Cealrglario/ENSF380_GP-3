@@ -19,7 +19,12 @@ public class MedicalRecord{
           this.location = location;
      }
      public String getTreatmentDetails(){
-          return treatmentDetails;
+               if (treatmentDetails == null || treatmentDetails.isEmpty()) {
+                  throw new IllegalArgumentException("Treatment details is empty.");
+               }else{
+                   return treatmentDetails;
+               }
+
      }
      public void setTreatmentDetails(String treatmentDetails){
           this.treatmentDetails = treatmentDetails;
