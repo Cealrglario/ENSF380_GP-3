@@ -147,50 +147,72 @@ public class DisasterVictim {
     }
 
     public void addPersonalBelonging(Supply supply) {
-        Supply[] newPersonalBelongings = Arrays.copyOf(personalBelongings, personalBelongings.length + 1);
-        newPersonalBelongings[newPersonalBelongings.length - 1] = supply;
+        if (personalBelongings != null) {
+            Supply[] newPersonalBelongings = Arrays.copyOf(personalBelongings, personalBelongings.length + 1);
+            newPersonalBelongings[newPersonalBelongings.length - 1] = supply;
 
-        this.personalBelongings = newPersonalBelongings;
+            this.personalBelongings = newPersonalBelongings;
+        } else {
+            Supply[] newPersonalBelongings = new Supply[1];
+            newPersonalBelongings[0] = supply;
+            this.personalBelongings = newPersonalBelongings;
+        }
     }
 
     public void removePersonalBelonging(Supply unwantedSupply) {
-        Supply[] newPersonalBelongings = new Supply[personalBelongings.length - 1];
+        if (personalBelongings != null) {
+            Supply[] newPersonalBelongings = new Supply[personalBelongings.length - 1];
 
-        for (int i = 0, j = 0; i < personalBelongings.length; i++) {
-            if (personalBelongings[i] != unwantedSupply) {
-                newPersonalBelongings[j] = personalBelongings[i];
-                j++;
+            for (int i = 0, j = 0; i < personalBelongings.length; i++) {
+                if (personalBelongings[i] != unwantedSupply) {
+                    newPersonalBelongings[j] = personalBelongings[i];
+                    j++;
+                }
             }
-        }
 
-        this.personalBelongings = newPersonalBelongings;
+            this.personalBelongings = newPersonalBelongings;
+        }
     }
 
     public void removeFamilyConnection(FamilyRelation exRelation) {
-        FamilyRelation[] newFamilyConnections = new FamilyRelation[familyConnections.length - 1];
+        if (familyConnections != null) {
+            FamilyRelation[] newFamilyConnections = new FamilyRelation[familyConnections.length - 1];
 
-        for (int i = 0, j = 0; i < familyConnections.length; i++) {
-            if (familyConnections[i] != exRelation) {
-                newFamilyConnections[j] = familyConnections[i];
-                j++;
+            for (int i = 0, j = 0; i < familyConnections.length; i++) {
+                if (familyConnections[i] != exRelation) {
+                    newFamilyConnections[j] = familyConnections[i];
+                    j++;
+                }
             }
-        }
 
-        this.familyConnections = newFamilyConnections;
+            this.familyConnections = newFamilyConnections;
+        }
     }
 
     public void addFamilyConnection(FamilyRelation relation) {
-        FamilyRelation[] newFamilyConnections = Arrays.copyOf(familyConnections, familyConnections.length + 1);
-        newFamilyConnections[newFamilyConnections.length - 1] = relation;
+        if (familyConnections != null) {
+            FamilyRelation[] newFamilyConnections = Arrays.copyOf(familyConnections, familyConnections.length + 1);
+            newFamilyConnections[newFamilyConnections.length - 1] = relation;
 
-        this.familyConnections = newFamilyConnections;
+            this.familyConnections = newFamilyConnections;
+        } else {
+            FamilyRelation[] newFamilyConnections = new FamilyRelation[1];
+            newFamilyConnections[0] = relation;
+            this.familyConnections = newFamilyConnections;
+        }
     }
 
     public void addMedicalRecord(MedicalRecord record) {
-        MedicalRecord[] newMedicalRecords = Arrays.copyOf(medicalRecords, medicalRecords.length + 1);
-        newMedicalRecords[medicalRecords.length - 1] = record;
+        if (medicalRecords != null) {
+            MedicalRecord[] newMedicalRecords = Arrays.copyOf(medicalRecords, medicalRecords.length + 1);
+            newMedicalRecords[medicalRecords.length - 1] = record;
 
-        this.medicalRecords = newMedicalRecords;
+            this.medicalRecords = newMedicalRecords;
+        } else {
+            MedicalRecord[] newMedicalRecords = new MedicalRecord[1];
+            newMedicalRecords[0] = record;
+            this.medicalRecords = newMedicalRecords;
+        }
     }
 
 
