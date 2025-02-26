@@ -22,7 +22,7 @@ public class Inquirer {
         return LAST_NAME;
     }
 
-    public String getServicesPhone(){
+    public String getServicesPhoneNum(){
         return SERVICES_PHONE;
     }
 
