@@ -72,7 +72,7 @@ public class ReliefService {
     public String getLogDetails() {
         return String.format("Inquirer: %s, Missing Person: %s, Date of Inquiry: %s, Info Provided: %s, Last Known Location: %s",
                 inquirer.getFirstName(), 
-                missingPerson.getName(), 
+                missingPerson.getFirstName(),
                 dateOfInquiry, 
                 infoProvided, 
                 lastKnownLocation.getName());

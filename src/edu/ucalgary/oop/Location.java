@@ -70,7 +70,7 @@ public class Location {
 
     public void addSupply(Supply supply){
         if (supplies != null){
-            ArrayList<DisasterVictim> temporaryList = new ArrayList<>(Arrays.asList(this.supplies));
+            ArrayList<Supply> temporaryList = new ArrayList<>(Arrays.asList(this.supplies));
             temporaryList.add(supply);
  
             supplies = temporaryList.toArray(new Supply[0]);
@@ -81,7 +81,7 @@ public class Location {
 
     public void removeSupply(Supply supply){
         if (supplies != null){
-            ArrayList<DisasterVictim> temporaryList = new ArrayList<>(Arrays.asList(this.supplies));
+            ArrayList<Supply> temporaryList = new ArrayList<>(Arrays.asList(this.supplies));
             temporaryList.remove(supply);
  
             supplies = temporaryList.toArray(new Supply[0]);
