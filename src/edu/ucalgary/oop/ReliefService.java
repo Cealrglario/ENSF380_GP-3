@@ -11,11 +11,11 @@ public class ReliefService {
     private Location lastKnownLocation;  
 
     public ReliefService(Inquirer inquirer, DisasterVictim missingPerson, String dateOfInquiry, String infoProvided, Location lastKnownLocation) {
-        setInquirer(inquirer);
-        setMissingPerson(missingPerson);
-        setDateOfInquiry(dateOfInquiry);
-        setInfoProvided(infoProvided);
-        setLastKnownLocation(lastKnownLocation);
+        this.inquirer = inquirer;
+        this.missingPerson = missingPerson;
+        this.dateOfInquiry = dateOfInquiry;
+        this.infoProvided = infoProvided;
+        this.lastKnownLocation = lastKnownLocation;
     }
 
     public Inquirer getInquirer(){
